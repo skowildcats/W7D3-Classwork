@@ -114,3 +114,3243 @@ Migrating to EditUsers (20210602180859)
   ↳ bin/rails:9
   [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:9
+  [1m[35m (641.9ms)[0m  [1m[35mCREATE DATABASE "goalsapp_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (254.8ms)[0m  [1m[35mCREATE DATABASE "goalsapp_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+Started GET "/new_user" for ::1 at 2021-06-02 14:29:00 -0500
+
+ActiveRecord::PendingMigrationError - Migrations are pending. To resolve this issue, run:
+        bin/rails db:migrate RAILS_ENV=development:
+
+Started POST "/__better_errors/ee8a346584448d48/variables" for ::1 at 2021-06-02 14:29:02 -0500
+  [1m[35m (29.2ms)[0m  [1m[35mCREATE DATABASE "goalsapp_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE DATABASE "goalsapp_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (3.6ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (105.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_session_token" ON "users"  ("session_token")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_username" ON "users"  ("username")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (5.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (30.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20210602180859)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20210602173617),
+(20210602180452);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (5.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (24.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-06-02 19:29:31.147950"], ["updated_at", "2021-06-02 19:29:31.147950"]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (0.8ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (60.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (37.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_session_token" ON "users"  ("session_token")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (31.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_username" ON "users"  ("username")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Update (26.8ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "development"], ["updated_at", "2021-06-02 19:29:31.419004"], ["key", "environment"]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (0.5ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2021-06-02 19:29:31.452751"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/new_user" for ::1 at 2021-06-02 14:29:33 -0500
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jonchen/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (No route matches [GET] "/new_user"):
+  
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/new_user" for ::1 at 2021-06-02 14:29:37 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/new_user"):
+  
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6603431597915282865)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (25.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(6603431597915282865)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/new_user" for ::1 at 2021-06-02 14:29:52 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/new_user"):
+  
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/new" for ::1 at 2021-06-02 14:30:17 -0500
+Processing by UsersController#new as HTML
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms)
+
+
+
+ActionView::MissingTemplate - Missing template users/new, application/new with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/jonchen/Desktop/AAClasswork/W7D3/goalsapp/app/views":
+  app/controllers/users_controller.rb:4:in `new'
+
+Started GET "/user/new" for ::1 at 2021-06-02 14:30:18 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/user/new"):
+  
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/__better_errors/75bf270e33d2df33/variables" for ::1 at 2021-06-02 14:30:26 -0500
+Started GET "/users/new" for ::1 at 2021-06-02 14:30:47 -0500
+Processing by UsersController#new as HTML
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.0ms)
+
+
+
+ActionView::MissingTemplate - Missing template users/new, application/new with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/jonchen/Desktop/AAClasswork/W7D3/goalsapp/app/views":
+  app/controllers/users_controller.rb:4:in `new'
+
+Started POST "/__better_errors/23c6aee3419aabd6/variables" for ::1 at 2021-06-02 14:30:48 -0500
+Started GET "/users/new" for ::1 at 2021-06-02 14:31:54 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 625ms (Views: 622.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2021-06-02 14:32:27 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 84ms (Views: 82.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2021-06-02 15:38:23 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 136ms (Views: 132.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2021-06-02 15:38:30 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"u+jzQJLR9y8C9C93cqpU5kGR2m72dozRADrxUiVA+hON8Ey8D9h/l4VPILcuAm5coZCJzCY8abW4WBtQoWQQGg==", "user"=>{"username"=>"asdas", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Exists (7.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "asdas"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Exists (25.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ohOzz2NWMZbSvqdyrSjRAw"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Create (14.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at", "password_digest", "session_token") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "asdas"], ["created_at", "2021-06-02 20:38:31.257082"], ["updated_at", "2021-06-02 20:38:31.257082"], ["password_digest", "$2a$12$63dckJ86hI.1BrPc8rC7vuAWplWJA27/Et0BZ.E60OmDV3cJk87xm"], ["session_token", "ohOzz2NWMZbSvqdyrSjRAw"]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (41.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (41.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:36
+  [1m[36mUser Exists (6.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "asdas"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:36
+  [1m[36mUser Exists (33.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "KcnpfkYBEf_pyZha9LhRzg"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:36
+  [1m[36mUser Update (2.6ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "session_token" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2021-06-02 20:38:31.417966"], ["session_token", "KcnpfkYBEf_pyZha9LhRzg"], ["id", 1]]
+  ↳ app/models/user.rb:36
+  [1m[35m (32.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:36
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (810.9ms)
+Completed 500 Internal Server Error in 1908ms (ActiveRecord: 288.5ms)
+
+
+
+NameError - undefined local variable or method `user' for #<#<Class:0x00007fe7a0b64808>:0x00007fe7a0ac5b18>
+Did you mean?  @user:
+  app/views/users/show.html.erb:1:in `_app_views_users_show_html_erb__2036538793626106638_70316404909060'
+  app/controllers/users_controller.rb:12:in `create'
+
+Started POST "/__better_errors/510f8ba990f1ac40/variables" for ::1 at 2021-06-02 15:38:34 -0500
+Started GET "/users/new" for ::1 at 2021-06-02 15:38:54 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 98ms (Views: 96.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2021-06-02 15:38:58 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"iyzVCYMZVh3ZaCASjn0LGNj0f8nn6jkGje9qvfQi7j+9NGr1HhDepV7TL9LS1TGiOPUsazeg3GI1jYC/cAYENg==", "user"=>{"username"=>"asda", "password"=>"[FILTERED]"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Exists (28.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "asda"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "vEufbSiRggw3Vbj7O-elHg"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Create (1.9ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at", "password_digest", "session_token") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "asda"], ["created_at", "2021-06-02 20:38:59.119354"], ["updated_at", "2021-06-02 20:38:59.119354"], ["password_digest", "$2a$12$XbDA1W.SOAkaJQnEE4He6exu3I.GULlt0ellpXUorNsf3ykelsB3O"], ["session_token", "vEufbSiRggw3Vbj7O-elHg"]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (21.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (4.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:36
+  [1m[36mUser Exists (27.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "asda"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:36
+  [1m[36mUser Exists (11.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "VmaMTobSblFNpqVho0HT-g"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:36
+  [1m[36mUser Update (2.2ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "session_token" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2021-06-02 20:38:59.222530"], ["session_token", "VmaMTobSblFNpqVho0HT-g"], ["id", 2]]
+  ↳ app/models/user.rb:36
+  [1m[35m (28.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:36
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 766ms (Views: 70.8ms | ActiveRecord: 128.1ms)
+
+
+Started GET "/users/new" for ::1 at 2021-06-02 15:47:05 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (18.6ms)
+Completed 200 OK in 185ms (Views: 183.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2021-06-02 15:47:10 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"NBWdFwHDUsdsfn6NEm/ilGq6vw9bggUOoDvdA7JqD0sCDSLrnMraf+vFcU1Ox9guirvsrYvI4GoYWTcBNk7lQg==", "user"=>{"username"=>"catcat", "password"=>"[FILTERED]"}}
+  [1m[35m (1.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Exists (25.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "catcat"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Exists (45.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "qj7f9jnMFQ9gQyKpgDlPNw"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Create (2.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at", "password_digest", "session_token") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "catcat"], ["created_at", "2021-06-02 20:47:11.371338"], ["updated_at", "2021-06-02 20:47:11.371338"], ["password_digest", "$2a$12$dK3xr3HlxH4ujE1BOyw6suQ.KQvGr5W5tpQvemNWeBNApmdV3F0Uq"], ["session_token", "qj7f9jnMFQ9gQyKpgDlPNw"]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (27.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (3.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:36
+  [1m[36mUser Exists (3.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "catcat"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:36
+  [1m[36mUser Exists (24.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:36
+  [1m[36mUser Update (1.1ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "session_token" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2021-06-02 20:47:11.476257"], ["session_token", "1uofqMecalYWPZzMQ36zdA"], ["id", 3]]
+  ↳ app/models/user.rb:36
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:36
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 1137ms (Views: 118.8ms | ActiveRecord: 341.0ms)
+
+
+  [1m[36mUser Load (26.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started GET "/session/new" for ::1 at 2021-06-02 15:47:32 -0500
+
+ActionController::RoutingError - undefined local variable or method `require_logged_out' for SessionsController:Class
+Did you mean?  require_or_load:
+
+Started POST "/__better_errors/26f46a950dd5c5ea/variables" for ::1 at 2021-06-02 15:47:33 -0500
+Started GET "/session/new" for ::1 at 2021-06-02 15:49:35 -0500
+
+ActionController::RoutingError - undefined local variable or method `require_logged_out' for SessionsController:Class
+Did you mean?  require_or_load:
+
+Started POST "/__better_errors/28af32020a177ce6/variables" for ::1 at 2021-06-02 15:49:37 -0500
+Started GET "/session/new" for ::1 at 2021-06-02 15:49:43 -0500
+
+ActionController::RoutingError - undefined local variable or method `require_logged_out' for SessionsController:Class
+Did you mean?  require_or_load:
+
+Started POST "/__better_errors/f9853739004de634/variables" for ::1 at 2021-06-02 15:49:44 -0500
+Started GET "/session/new" for ::1 at 2021-06-02 15:49:51 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/users
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 331ms (ActiveRecord: 241.2ms)
+
+
+Started GET "/users" for ::1 at 2021-06-02 15:49:52 -0500
+
+AbstractController::ActionNotFound - The action 'index' could not be found for UsersController:
+
+Started POST "/__better_errors/b1b9915ddc7e533f/variables" for ::1 at 2021-06-02 15:49:53 -0500
+Started GET "/sessions/new" for ::1 at 2021-06-02 15:50:14 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/sessions/new"):
+  
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/sessions/new" for ::1 at 2021-06-02 15:51:13 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/sessions/new"):
+  
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/sessions/new" for ::1 at 2021-06-02 15:51:22 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/sessions/new"):
+  
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/session/new" for ::1 at 2021-06-02 15:51:41 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (25.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/users/3
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 221ms (ActiveRecord: 133.9ms)
+
+
+Started GET "/users/3" for ::1 at 2021-06-02 15:51:41 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (9.6ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 0.0ms)
+
+
+
+NoMethodError - undefined method `username' for nil:NilClass:
+  app/views/users/show.html.erb:1:in `_app_views_users_show_html_erb__2036538793626106638_70316351762340'
+
+Started POST "/__better_errors/0b2f37ea9d917968/variables" for ::1 at 2021-06-02 15:51:42 -0500
+Started GET "/users/3" for ::1 at 2021-06-02 15:52:34 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (15.0ms)
+Completed 500 Internal Server Error in 65ms (ActiveRecord: 0.0ms)
+
+
+
+NoMethodError - undefined method `username' for nil:NilClass:
+  app/views/users/show.html.erb:1:in `_app_views_users_show_html_erb__2036538793626106638_70316416979360'
+
+Started POST "/__better_errors/864cf41e56939b93/variables" for ::1 at 2021-06-02 15:52:35 -0500
+Started GET "/session/new" for ::1 at 2021-06-02 15:52:38 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 156ms (ActiveRecord: 113.2ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:52:38 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (21.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 40ms (ActiveRecord: 21.2ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:52:38 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 10ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:52:38 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 8ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:52:38 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 23ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:52:38 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 15ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:52:38 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (25.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 46ms (ActiveRecord: 25.6ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:52:39 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 15ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:52:39 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (34.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 38ms (ActiveRecord: 34.1ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:52:39 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:52:39 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:52:39 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (37.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 42ms (ActiveRecord: 37.7ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:52:39 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (23.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 28ms (ActiveRecord: 23.5ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:52:39 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 6ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:52:39 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (6.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 14ms (ActiveRecord: 6.0ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:52:39 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 9ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:52:39 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 8ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:52:39 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 7ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:52:39 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (8.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 15ms (ActiveRecord: 8.1ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:52:39 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 23ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:52:40 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:52:41 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (4.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 8ms (ActiveRecord: 4.4ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:52:41 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:52:41 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (46.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 56ms (ActiveRecord: 46.2ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:52:41 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 8ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:52:41 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (36.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 41ms (ActiveRecord: 36.4ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:52:41 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 8ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:52:41 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 11ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:52:41 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (25.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 29ms (ActiveRecord: 25.6ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:52:41 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 6ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:52:41 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (4.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 10ms (ActiveRecord: 4.9ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:52:41 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:52:41 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:52:41 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:52:41 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 10ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:52:41 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (7.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 12ms (ActiveRecord: 7.1ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:52:41 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 6ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:52:42 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (14.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 23ms (ActiveRecord: 14.6ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:52:42 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 11ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:52:42 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 12ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:52:47 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (4.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 13ms (ActiveRecord: 4.2ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:52:47 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (41.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 50ms (ActiveRecord: 41.5ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:52:47 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (7.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 20ms (ActiveRecord: 7.2ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:52:47 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 10ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:52:47 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (22.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 36ms (ActiveRecord: 22.8ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:52:47 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 7ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:52:47 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 12ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:52:48 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (12.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 23ms (ActiveRecord: 12.7ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:52:48 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 57ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:52:48 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (4.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 22ms (ActiveRecord: 4.2ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:52:48 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (131.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 135ms (ActiveRecord: 131.5ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:52:48 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 9ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:52:48 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (6.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 14ms (ActiveRecord: 6.9ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:52:48 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (4.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 17ms (ActiveRecord: 4.4ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:52:48 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (26.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 36ms (ActiveRecord: 26.4ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:52:48 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (40.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 96ms (ActiveRecord: 40.0ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:52:49 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (54.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 59ms (ActiveRecord: 54.8ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:52:49 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (80.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 85ms (ActiveRecord: 80.2ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:52:49 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (78.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 94ms (ActiveRecord: 78.2ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:52:49 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 8ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:53:19 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 14ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:53:19 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (31.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 38ms (ActiveRecord: 31.9ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:53:19 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (22.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 32ms (ActiveRecord: 22.9ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:53:19 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (81.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 93ms (ActiveRecord: 81.3ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:53:19 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 7ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:53:20 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (8.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 18ms (ActiveRecord: 8.9ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:53:20 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (29.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 38ms (ActiveRecord: 29.0ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:53:20 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (5.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 13ms (ActiveRecord: 5.6ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:53:20 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (7.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 16ms (ActiveRecord: 7.8ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:53:20 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 11ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:53:20 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 7ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:53:20 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (7.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 13ms (ActiveRecord: 7.6ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:53:20 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (8.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 13ms (ActiveRecord: 8.3ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:53:20 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (8.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 12ms (ActiveRecord: 8.4ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:53:20 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 15ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:53:20 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 10ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:53:20 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 10ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:53:20 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 8ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:53:20 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 8ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:53:20 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 22ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:54:21 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (48.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 55ms (ActiveRecord: 48.7ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:54:21 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 9ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:54:21 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (91.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 109ms (ActiveRecord: 91.8ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:54:21 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 20ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:54:21 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (5.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 14ms (ActiveRecord: 5.2ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:54:21 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (5.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 28ms (ActiveRecord: 5.0ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:54:21 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 12ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:54:21 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 19ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:54:22 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 17ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:54:22 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (39.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 69ms (ActiveRecord: 39.2ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:54:22 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (5.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 16ms (ActiveRecord: 5.5ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:54:22 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (10.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 75ms (ActiveRecord: 10.3ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:54:22 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 8ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:54:22 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 15ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:54:22 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (38.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 51ms (ActiveRecord: 38.2ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:54:22 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (32.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 40ms (ActiveRecord: 32.6ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:54:22 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (79.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 97ms (ActiveRecord: 79.5ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:54:23 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 10ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:54:23 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 13ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:54:23 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (9.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 20ms (ActiveRecord: 9.2ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:59:23 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 370ms (ActiveRecord: 271.6ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:59:26 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 38ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:59:26 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (36.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 50ms (ActiveRecord: 36.6ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:59:26 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (85.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 107ms (ActiveRecord: 85.5ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:59:27 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (126.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 138ms (ActiveRecord: 126.5ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:59:27 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 25ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:59:27 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (27.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 36ms (ActiveRecord: 27.3ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:59:27 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (30.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 45ms (ActiveRecord: 36.2ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:59:29 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (96.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 109ms (ActiveRecord: 96.0ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:59:29 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (36.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 55ms (ActiveRecord: 36.2ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:59:29 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 26ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:59:29 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (86.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 93ms (ActiveRecord: 86.4ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:59:29 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (33.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 56ms (ActiveRecord: 33.5ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:59:29 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (340.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 345ms (ActiveRecord: 340.8ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:59:30 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (102.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 118ms (ActiveRecord: 102.4ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:59:30 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (101.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 112ms (ActiveRecord: 101.3ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:59:30 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (34.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 54ms (ActiveRecord: 34.5ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:59:31 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (95.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 104ms (ActiveRecord: 95.8ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:59:31 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (200.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 224ms (ActiveRecord: 200.9ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 15:59:31 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (31.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 45ms (ActiveRecord: 31.4ms)
+
+
+Started GET "/" for ::1 at 2021-06-02 15:59:34 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/jonchen/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/jonchen/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.6/lib/rails/templates/rails/welcome/index.html.erb (12.6ms)
+Completed 200 OK in 46ms (Views: 32.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2021-06-02 15:59:37 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (4.5ms)
+  [1m[36mUser Load (14.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Completed 500 Internal Server Error in 1516ms (ActiveRecord: 14.6ms)
+
+
+
+NameError - undefined local variable or method `sessions_url' for #<#<Class:0x00007fe7a0aaf458>:0x00007fe7a0aadb30>
+Did you mean?  session_url:
+  app/views/layouts/application.html.erb:15:in `_app_views_layouts_application_html_erb__4426692626370723912_70316404846760'
+  app/controllers/users_controller.rb:4:in `new'
+
+Started POST "/__better_errors/2372c72c2fe5f375/variables" for ::1 at 2021-06-02 15:59:40 -0500
+Started GET "/users/new" for ::1 at 2021-06-02 15:59:54 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (12.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Completed 200 OK in 100ms (Views: 86.7ms | ActiveRecord: 12.0ms)
+
+
+Started DELETE "/session" for ::1 at 2021-06-02 16:00:00 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"TwR+ZwdsopPEUbW8P6tIbaAgh1dQoZIYr+zLV2EsbCN5HMGbmmUqK0PqunxjA3LXQCHU9YDrd3wXjiFV5QiGKg=="}
+  [1m[36mUser Load (26.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Completed 500 Internal Server Error in 680ms (ActiveRecord: 26.8ms)
+
+
+
+NameError - undefined local variable or method `logged_in' for #<SessionsController:0x00007fe7a0d27668>
+Did you mean?  logged_in?
+               logged_out:
+  app/controllers/application_controller.rb:10:in `logged_out'
+  app/controllers/sessions_controller.rb:21:in `destroy'
+
+Started POST "/__better_errors/87d544ffd03217ca/variables" for ::1 at 2021-06-02 16:00:02 -0500
+Started GET "/users/new" for ::1 at 2021-06-02 16:00:17 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (27.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Completed 200 OK in 336ms (Views: 198.8ms | ActiveRecord: 136.1ms)
+
+
+Started DELETE "/session" for ::1 at 2021-06-02 16:00:19 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ShS73qwyqhDjA4Pa2bPNcrsFxnqi7ev4cPen5pQMbg98DAQiMTsiqGS4jBqFG/fIWwSV2HKnDpzIlU3kECiEBg=="}
+  [1m[36mUser Load (36.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1uofqMecalYWPZzMQ36zdA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+  [1m[35m (29.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:36
+  [1m[36mUser Exists (29.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "catcat"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:36
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "8P_kx2EgvCGnDzXrk8S-mg"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:36
+  [1m[36mUser Update (24.9ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "8P_kx2EgvCGnDzXrk8S-mg"], ["updated_at", "2021-06-02 21:00:20.189826"], ["id", 3]]
+  ↳ app/models/user.rb:36
+  [1m[35m (28.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:36
+Redirected to http://localhost:3000/session/new
+Completed 302 Found in 237ms (ActiveRecord: 150.4ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:00:20 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Completed 200 OK in 249ms (Views: 204.0ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/session" for ::1 at 2021-06-02 16:00:37 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"fdPwn4nUsxNwFXCVu97pJut22jLw+Yclr1/dD+2WWTZLy09jFN07q/euf1XndtOcC3eJkCCzYkEXPTcNabKzPw==", "user"=>{"username"=>"cat", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 1.7ms)
+
+
+
+ArgumentError - wrong number of arguments (given 2, expected 0):
+  app/models/user.rb:7:in `find_by_credentials'
+  app/controllers/sessions_controller.rb:10:in `create'
+
+Started POST "/__better_errors/e3ef5bfc82d363a4/variables" for ::1 at 2021-06-02 16:00:38 -0500
+Started POST "/session" for ::1 at 2021-06-02 16:00:55 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"fdPwn4nUsxNwFXCVu97pJut22jLw+Yclr1/dD+2WWTZLy09jFN07q/euf1XndtOcC3eJkCCzYkEXPTcNabKzPw==", "user"=>{"username"=>"catcat", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.4ms)
+
+
+
+ArgumentError - wrong number of arguments (given 2, expected 0):
+  app/models/user.rb:7:in `find_by_credentials'
+  app/controllers/sessions_controller.rb:10:in `create'
+
+Started POST "/__better_errors/adcf17a76b9d0aec/variables" for ::1 at 2021-06-02 16:00:55 -0500
+Started GET "/session/new" for ::1 at 2021-06-02 16:01:29 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Completed 200 OK in 275ms (Views: 177.4ms | ActiveRecord: 34.2ms)
+
+
+Started POST "/session" for ::1 at 2021-06-02 16:01:34 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"qQXR1jFoc05Cx/TxNEYY8buzSIz6dupXxmBEt8JpNGOfHW4qrGH79sV8+zFo7iJLW7IbLio8DzN+Aq61Rk3eag==", "user"=>{"username"=>"catcat", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "username"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:8
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.6ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Completed 200 OK in 93ms (Views: 82.9ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/session" for ::1 at 2021-06-02 16:02:33 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"e3H96ADB77S/28DsJbjmP4a+tVKvVdeqfQx17dcpBPNNaUIUnchnDDhgzyx5ENyFZr/m8H8fMs7Fbp/vUw3u+g==", "user"=>{"username"=>"catcat", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (18.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+  [1m[36mUser Load (32.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "catcat"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:8
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:36
+  [1m[36mUser Exists (29.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "catcat"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:36
+  [1m[36mUser Exists (37.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:36
+  [1m[36mUser Update (50.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["updated_at", "2021-06-02 21:02:34.167722"], ["id", 3]]
+  ↳ app/models/user.rb:36
+  [1m[35m (85.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:36
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 946ms (ActiveRecord: 353.4ms)
+
+
+Started GET "/users/3" for ::1 at 2021-06-02 16:02:34 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (27.0ms)
+Completed 500 Internal Server Error in 91ms (ActiveRecord: 0.0ms)
+
+
+
+NoMethodError - undefined method `username' for nil:NilClass:
+  app/views/users/show.html.erb:1:in `_app_views_users_show_html_erb__2036538793626106638_70316405028780'
+
+Started POST "/__better_errors/c5734718f7ce4003/variables" for ::1 at 2021-06-02 16:02:35 -0500
+Started GET "/session/new" for ::1 at 2021-06-02 16:02:55 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (48.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 54ms (ActiveRecord: 48.4ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:02:55 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 19ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:02:55 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 9ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:02:55 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 9ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:02:56 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (13.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 25ms (ActiveRecord: 13.6ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:02:56 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (80.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 93ms (ActiveRecord: 80.1ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:02:56 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 19ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:02:56 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 8ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:02:56 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (18.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 30ms (ActiveRecord: 18.1ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:02:56 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (37.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 50ms (ActiveRecord: 37.9ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:02:56 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (11.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 16ms (ActiveRecord: 11.7ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:02:56 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (4.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 7ms (ActiveRecord: 4.5ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:02:56 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (5.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 14ms (ActiveRecord: 5.3ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:02:56 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 12ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:02:56 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 12ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:02:57 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (29.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 45ms (ActiveRecord: 29.3ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:02:57 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 14ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:02:57 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (13.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 29ms (ActiveRecord: 13.5ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:02:57 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 15ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:02:57 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 20ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:02:58 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (33.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 39ms (ActiveRecord: 33.5ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:02:58 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 11ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:02:58 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (14.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 24ms (ActiveRecord: 14.6ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:02:58 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 13ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:02:59 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (20.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 39ms (ActiveRecord: 20.1ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:02:59 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (41.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 48ms (ActiveRecord: 41.5ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:02:59 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 8ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:02:59 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:02:59 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (4.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 18ms (ActiveRecord: 4.7ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:02:59 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (9.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 17ms (ActiveRecord: 9.3ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:02:59 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (13.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 18ms (ActiveRecord: 13.6ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:02:59 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (37.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 40ms (ActiveRecord: 37.2ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:02:59 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (4.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 18ms (ActiveRecord: 4.7ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:02:59 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:02:59 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (5.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 26ms (ActiveRecord: 5.6ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:02:59 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (41.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 70ms (ActiveRecord: 41.9ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:02:59 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (6.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 14ms (ActiveRecord: 6.8ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:02:59 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (40.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 57ms (ActiveRecord: 40.9ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:03:00 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (7.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 15ms (ActiveRecord: 7.3ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:03:00 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (4.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 14ms (ActiveRecord: 4.2ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:03:05 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (26.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 30ms (ActiveRecord: 26.8ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:03:05 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (12.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 18ms (ActiveRecord: 12.1ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:03:05 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (36.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 45ms (ActiveRecord: 36.3ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:03:05 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 7ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:03:05 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (38.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 51ms (ActiveRecord: 38.6ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:03:05 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 8ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:03:05 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (5.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 30ms (ActiveRecord: 5.6ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:03:06 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (21.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 61ms (ActiveRecord: 21.1ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:03:06 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (32.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 47ms (ActiveRecord: 32.0ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:03:06 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 11ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:03:06 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:03:06 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:03:06 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:03:06 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 6ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:03:06 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (47.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 58ms (ActiveRecord: 47.2ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:03:06 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 16ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:03:06 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (47.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 57ms (ActiveRecord: 47.8ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:03:06 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (27.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 43ms (ActiveRecord: 27.6ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:03:06 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:03:07 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (5.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 16ms (ActiveRecord: 5.3ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:03:09 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (55.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 58ms (ActiveRecord: 55.5ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:03:09 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 11ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:03:09 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 10ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:03:09 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (44.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 55ms (ActiveRecord: 44.3ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:03:09 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (10.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 19ms (ActiveRecord: 10.2ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:03:09 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 14ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:03:09 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (26.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 33ms (ActiveRecord: 26.3ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:03:09 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 15ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:03:10 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (44.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 54ms (ActiveRecord: 44.2ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:03:10 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 16ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:03:10 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (16.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 19ms (ActiveRecord: 16.2ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:03:10 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:03:10 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 9ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:03:10 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (62.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 73ms (ActiveRecord: 62.1ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:03:10 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 7ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:03:10 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (9.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 15ms (ActiveRecord: 9.1ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:03:10 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (24.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 31ms (ActiveRecord: 24.8ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:03:10 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (42.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 53ms (ActiveRecord: 42.6ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:03:11 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (37.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 46ms (ActiveRecord: 37.8ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:03:11 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (35.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 49ms (ActiveRecord: 35.5ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:04:23 -0500
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jonchen/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 117ms (ActiveRecord: 66.5ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:04:23 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 15ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:04:23 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 8ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:04:23 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (6.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 11ms (ActiveRecord: 6.1ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:04:23 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (9.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 13ms (ActiveRecord: 9.1ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:04:23 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (11.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 16ms (ActiveRecord: 11.3ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:04:23 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:04:23 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 13ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:04:24 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (20.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 32ms (ActiveRecord: 20.5ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:04:24 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (6.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 56ms (ActiveRecord: 6.9ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:04:24 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 8ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:04:24 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 7ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:04:24 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (6.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 10ms (ActiveRecord: 6.4ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:04:24 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 6ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:04:24 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (7.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 17ms (ActiveRecord: 7.7ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:04:24 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 6ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:04:24 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 11ms (ActiveRecord: 4.0ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:04:24 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 7ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:04:24 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 10ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:04:24 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (10.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 16ms (ActiveRecord: 10.9ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:04:25 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (114.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 122ms (ActiveRecord: 114.8ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:04:26 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (7.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 11ms (ActiveRecord: 7.5ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:04:26 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 17ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:04:26 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 13ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:04:26 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (15.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 31ms (ActiveRecord: 15.8ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:04:26 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (7.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 17ms (ActiveRecord: 7.7ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:04:27 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (105.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 114ms (ActiveRecord: 105.4ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:04:27 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (112.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 117ms (ActiveRecord: 112.5ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:04:27 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (14.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 22ms (ActiveRecord: 14.8ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:04:27 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 21ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:04:27 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (64.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 69ms (ActiveRecord: 64.2ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:04:27 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:04:27 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (11.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 20ms (ActiveRecord: 11.6ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:04:27 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 13ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:04:27 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (6.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 15ms (ActiveRecord: 6.7ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:04:28 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (25.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 57ms (ActiveRecord: 25.4ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:04:28 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 17ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:04:28 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 9ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:04:28 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (4.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_logged_out rendered or redirected
+Completed 302 Found in 15ms (ActiveRecord: 4.8ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:05:02 -0500
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jonchen/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.7ms)
+  [1m[36mUser Load (26.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Completed 200 OK in 511ms (Views: 421.0ms | ActiveRecord: 63.5ms)
+
+
+Started DELETE "/session" for ::1 at 2021-06-02 16:05:09 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"aS8TcBeoCxI7PspEj215oeZeHrS8j8lwmm0ubAaeayhfN6yMiqGDqryFxYTTxUMbBl9NFmzFLBQiD8RugrqBIQ=="}
+  [1m[36mUser Load (44.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjDo7BLhl6TSl2oLURwzEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+  [1m[35m (1.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:36
+  [1m[36mUser Exists (42.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "catcat"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:36
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "NsAk-xZ08NPlS_r9-Ha61w"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:36
+  [1m[36mUser Update (33.1ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "NsAk-xZ08NPlS_r9-Ha61w"], ["updated_at", "2021-06-02 21:05:09.618468"], ["id", 3]]
+  ↳ app/models/user.rb:36
+  [1m[35m (8.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:36
+Redirected to http://localhost:3000/session/new
+Completed 302 Found in 171ms (ActiveRecord: 132.0ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:05:09 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.3ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Completed 200 OK in 149ms (Views: 143.7ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/session" for ::1 at 2021-06-02 16:05:15 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"CjafSSNrZGoXaPsvc1qfKz8iZb52F9OhULB3Kg7XDLo8LiC1vmLs0pDT9O8v8qWR3yM2HKZdNsXo0p0oivPmsw==", "user"=>{"username"=>"catcat", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "catcat"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:8
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:36
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "catcat"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:36
+  [1m[36mUser Exists (13.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "Q6wOXmq9w7TGSXPA358p_Q"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:36
+  [1m[36mUser Update (24.7ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "Q6wOXmq9w7TGSXPA358p_Q"], ["updated_at", "2021-06-02 21:05:16.378688"], ["id", 3]]
+  ↳ app/models/user.rb:36
+  [1m[35m (15.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:36
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 616ms (ActiveRecord: 55.6ms)
+
+
+Started GET "/users/3" for ::1 at 2021-06-02 16:05:16 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (19.2ms)
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 0.0ms)
+
+
+
+NoMethodError - undefined method `username' for nil:NilClass:
+  app/views/users/show.html.erb:1:in `_app_views_users_show_html_erb___440149163617133389_70317645411380'
+
+Started POST "/__better_errors/871270ccf301c17a/variables" for ::1 at 2021-06-02 16:05:17 -0500
+Started GET "/users/3" for ::1 at 2021-06-02 16:05:57 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (921.5ms)
+Completed 500 Internal Server Error in 946ms (ActiveRecord: 0.0ms)
+
+
+
+NameError - undefined local variable or method `username' for #<#<Class:0x00007fe8348d6070>:0x00007fe83483c858>
+Did you mean?  user_path:
+  app/views/users/show.html.erb:1:in `_app_views_users_show_html_erb___440149163617133389_70317645097120'
+
+Started POST "/__better_errors/1fbe45c8fe20c742/variables" for ::1 at 2021-06-02 16:05:59 -0500
+Started GET "/users/3" for ::1 at 2021-06-02 16:08:15 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Q6wOXmq9w7TGSXPA358p_Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+  Rendered users/show.html.erb within layouts/application (118.1ms)
+Completed 200 OK in 252ms (Views: 168.1ms | ActiveRecord: 77.1ms)
+
+
+Started DELETE "/session" for ::1 at 2021-06-02 16:09:54 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"TzRkg0HEJprj/8f58H9sjyL60NLLI0EEg9MZW6sSPad5LNt/3M2uImREyDms11Y1wvuDcBtppGA7sfNZLzbXrg=="}
+  [1m[36mUser Load (31.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Q6wOXmq9w7TGSXPA358p_Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+  [1m[35m (41.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:36
+  [1m[36mUser Exists (17.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "catcat"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:36
+  [1m[36mUser Exists (49.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "VQGgjReD4d6R0x2ufWibHA"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:36
+  [1m[36mUser Update (33.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "VQGgjReD4d6R0x2ufWibHA"], ["updated_at", "2021-06-02 21:09:54.947612"], ["id", 3]]
+  ↳ app/models/user.rb:36
+  [1m[35m (16.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:36
+Redirected to http://localhost:3000/session/new
+Completed 302 Found in 245ms (ActiveRecord: 190.0ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:09:55 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.6ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Completed 200 OK in 132ms (Views: 130.3ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/session" for ::1 at 2021-06-02 16:09:59 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"GkI4c/JK8Re96t6BDb0YB5BySMksk41wtaE8SMbauPIsWoePb0N5rzpR0UFRFSK9cHMba/zZaBQNw9ZKQv5S+w==", "user"=>{"username"=>"catcat", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (35.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "catcat"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:8
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:36
+  [1m[36mUser Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "catcat"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:36
+  [1m[36mUser Exists (14.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "k1tcYClNLqnzHQTgwoo28Q"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:36
+  [1m[36mUser Update (19.8ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "k1tcYClNLqnzHQTgwoo28Q"], ["updated_at", "2021-06-02 21:09:59.894541"], ["id", 3]]
+  ↳ app/models/user.rb:36
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:36
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 627ms (ActiveRecord: 72.5ms)
+
+
+Started GET "/users/3" for ::1 at 2021-06-02 16:09:59 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k1tcYClNLqnzHQTgwoo28Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+  Rendered users/show.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 80ms (Views: 70.6ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/session" for ::1 at 2021-06-02 16:10:03 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"NUwE/byLHCJ0OCpzV23iIZIZjWqf6Z8dkkreA6Gzq+YDVLsBIYKUmvODJbMLxdibchjeyE+jenkqKDQBJZdB7w=="}
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k1tcYClNLqnzHQTgwoo28Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+  [1m[35m (43.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:36
+  [1m[36mUser Exists (34.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "catcat"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:36
+  [1m[36mUser Exists (31.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "L-UNvKixvaeuvZXjZYM6yw"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:36
+  [1m[36mUser Update (37.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "L-UNvKixvaeuvZXjZYM6yw"], ["updated_at", "2021-06-02 21:10:03.723865"], ["id", 3]]
+  ↳ app/models/user.rb:36
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:36
+Redirected to http://localhost:3000/session/new
+Completed 302 Found in 202ms (ActiveRecord: 151.3ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:10:03 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Completed 200 OK in 90ms (Views: 87.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/new" for ::1 at 2021-06-02 16:10:06 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.2ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Completed 200 OK in 218ms (Views: 216.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:14:02 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Completed 200 OK in 140ms (Views: 135.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:14:04 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+  [1m[36mUser Load (50.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Completed 200 OK in 237ms (Views: 185.5ms | ActiveRecord: 50.1ms)
+
+
+Started POST "/session" for ::1 at 2021-06-02 16:19:20 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"M+ZysWxTeXHJZQll97kE7FLUgYAqLvGw7QnwAhGFhNkF/s1N8VrxyU7eBqWrET5WstXSIvpkFNRVaxoAlaFu0A==", "user"=>{"username"=>"catcat", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "catcat"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:8
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (18.9ms)
+  [1m[36mUser Load (25.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Completed 200 OK in 606ms (Views: 119.1ms | ActiveRecord: 26.9ms)
+
+
+Started POST "/session" for ::1 at 2021-06-02 16:19:28 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"0Emf0eC5xinCNsA2W13R7UR0YgzFfq4lhmNUXyFhHDbmUSAtfbBOkUWNz/YH9etXpHUxrhU0S0E+Ab5dpUX2Pw==", "user"=>{"username"=>"catcat", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (21.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "catcat"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:8
+  [1m[35m (15.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:36
+  [1m[36mUser Exists (8.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "catcat"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:36
+  [1m[36mUser Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "tsQBokvy3xNB8vJkqzs5ww"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:36
+  [1m[36mUser Update (13.8ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "tsQBokvy3xNB8vJkqzs5ww"], ["updated_at", "2021-06-02 21:19:29.072401"], ["id", 3]]
+  ↳ app/models/user.rb:36
+  [1m[35m (38.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:36
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 672ms (ActiveRecord: 98.7ms)
+
+
+Started GET "/users/3" for ::1 at 2021-06-02 16:19:29 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "tsQBokvy3xNB8vJkqzs5ww"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+  Rendered users/show.html.erb within layouts/application (15.7ms)
+Completed 200 OK in 127ms (Views: 103.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/session" for ::1 at 2021-06-02 16:19:34 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/session"):
+  
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/session/new" for ::1 at 2021-06-02 16:19:41 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "tsQBokvy3xNB8vJkqzs5ww"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Completed 200 OK in 178ms (Views: 175.4ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/session" for ::1 at 2021-06-02 16:19:44 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"NUMjFan+mQ7eiRePsPIBfBzKPNUwEqX3UXurmon3JvkDW5zpNPcRtlkyGE/sWjvG/Mtvd+BYQJPpGUGYDdPM8A=="}
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "tsQBokvy3xNB8vJkqzs5ww"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+  [1m[35m (46.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:36
+  [1m[36mUser Exists (34.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "catcat"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:36
+  [1m[36mUser Exists (6.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "cS587UNXrJifRNQviFQQ0g"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:36
+  [1m[36mUser Update (38.8ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "cS587UNXrJifRNQviFQQ0g"], ["updated_at", "2021-06-02 21:19:44.496191"], ["id", 3]]
+  ↳ app/models/user.rb:36
+  [1m[35m (95.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:36
+Redirected to http://localhost:3000/session/new
+Completed 302 Found in 253ms (ActiveRecord: 224.8ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:19:44 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (23.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Completed 200 OK in 108ms (Views: 83.4ms | ActiveRecord: 23.9ms)
+
+
+Started POST "/session" for ::1 at 2021-06-02 16:20:28 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"X6EtNz7v7B6Nq8gouYbCfQte4bNxP6KhxgHWTDGPVnhpuZLLo+ZkpgoQx+jlLvjH61+yEaF1R8V+YzxOtau8cQ==", "user"=>{"username"=>"catcat", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (33.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "catcat"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:8
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:36
+  [1m[36mUser Exists (1.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "catcat"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:36
+  [1m[36mUser Exists (38.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "pEFHt8wXP08MpOpFisGYtA"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:36
+  [1m[36mUser Update (9.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "pEFHt8wXP08MpOpFisGYtA"], ["updated_at", "2021-06-02 21:20:28.853064"], ["id", 3]]
+  ↳ app/models/user.rb:36
+  [1m[35m (10.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:36
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 573ms (ActiveRecord: 94.3ms)
+
+
+Started GET "/users/3" for ::1 at 2021-06-02 16:20:28 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "pEFHt8wXP08MpOpFisGYtA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+  Rendered users/show.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 98ms (Views: 85.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:20:33 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (13.2ms)
+  [1m[36mUser Load (7.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "pEFHt8wXP08MpOpFisGYtA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Completed 200 OK in 145ms (Views: 136.1ms | ActiveRecord: 7.2ms)
+
+
+Started DELETE "/session" for ::1 at 2021-06-02 16:22:04 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"AnSDdEDAOTgL4G/o/fMeMLtlp4yXSp/lkO41Lq0Z8fs0bDyI3cmxgIxbYCihWySKW2T0LkcAeoEojN8sKT0b8g=="}
+  [1m[36mUser Load (42.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "pEFHt8wXP08MpOpFisGYtA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+  [1m[35m (27.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:36
+  [1m[36mUser Exists (47.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "catcat"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:36
+  [1m[36mUser Exists (5.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "rfkrhFjTfIz_UTjIfmxkGw"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:36
+  [1m[36mUser Update (1.7ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "rfkrhFjTfIz_UTjIfmxkGw"], ["updated_at", "2021-06-02 21:22:04.143297"], ["id", 3]]
+  ↳ app/models/user.rb:36
+  [1m[35m (12.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:36
+Redirected to http://localhost:3000/session/new
+Completed 302 Found in 148ms (ActiveRecord: 136.6ms)
+
+
+Started GET "/session/new" for ::1 at 2021-06-02 16:22:04 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+Completed 200 OK in 88ms (Views: 86.5ms | ActiveRecord: 0.3ms)
+
+
